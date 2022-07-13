@@ -1,0 +1,18 @@
+Admin
+	- login
+		- Tools
+			- Form to add lottery datas
+			- Table showing Added lottery No./ edit/ delete
+			- Form to add winning No.
+				- Check winning No. in database
+			- Table Showing Winning record (Old, Now)
+
+User
+	- Register
+	- login
+		- Tools
+			- Form to add lottery datas (owned table)
+			- Table showing Added lottery No./ edit/ delete (owned datas)
+			- Form to add winning No. (global)
+				- Check winning No. in database (owned table)
+			- Table Showing Winning record (Old, Now) (owned table)
