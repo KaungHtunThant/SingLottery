@@ -1,13 +1,31 @@
-Admin
-	- login
-		- Tools
-			- Form to add lottery datas
-			- Table showing Added lottery No./ edit/ delete
-			- Form to add winning No.
-				- Check winning No. in database
-			- Table Showing Winning record (Old, Now)
+Functions
+	- Tools
+		- Form to add lottery data (lottery adding form page)
+		- Table showing Added lottery No./ edit/ delete (lottery management page)
+		- Form to add winning No. (result adding form page)
+			- Check winning No. in database (result list page)
+		- Table Showing Winning record (Old, Now) (result list page)
+		- Statistic (Dashboard page, Statistics page)
+	- Auth
+		- Login (login page)
+		- Logout (Dashboard -> login page)
+		- Register (Register page)
+		- Password Reset (pw reset page)
 
-User
+Pages
+	- Login
+	- Register
+	- Forgot Password
+	- Dashboard
+	- Lottery adding form
+	- Batches
+	- Lotteries table
+	- Results adding Form
+	- Results Table
+	- Winners Table
+	- Statistics
+
+User (Future Update)
 	- Register
 	- login
 		- Tools
@@ -16,3 +34,47 @@ User
 			- Form to add winning No. (global)
 				- Check winning No. in database (owned table)
 			- Table Showing Winning record (Old, Now) (owned table)
+
+Database
+	- Tables
+		- batchs
+			- batch_id
+			- start_date
+			- end_date
+		- lotteries
+			- lottery_id (int, primary key, auto increment, not null)
+			- lottery_no (int, not null, unique)
+			- batch_id (int, not null)
+			- user_id
+			- customer_Name (varchr(255))
+			- customer_ph_no (int)
+			- Payment_id (int)
+			- Paid (bool)
+		- payments
+			- payment_id (int, primary, not null, auto increment)
+			- payment_method (varchar(255))
+		- user
+			- user_id (int, primary, not null, auto increment)
+			- username (varchar(255), not null, unique)
+			- password (varchar(255), not null)
+			- privilege (int)
+			- ban (bool)
+		- privileges
+			- privilege_id (int, primary, not null, auto increment)
+			- Privilege_level (varchar(255), not null, unique)
+		- results
+			- result_id
+			- batch_id
+			- prize_id
+			- result_no
+		- prizes
+			- prize_id
+			- prize_name
+		- winners
+			- winner_id
+			- result_id
+			- lottery_id
+			- user_id
+		-lottery_settings
+			- setting_id
+			- lottery_price
