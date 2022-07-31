@@ -8,7 +8,7 @@
     <body id="page-top">
         <?php include "static/header.php" ?>
 
-        <?php include "contents/lotterytable.php" ?>
+        Login Fail
 
         <?php include "static/footer.php" ?>
 

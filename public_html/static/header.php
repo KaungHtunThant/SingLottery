@@ -5,7 +5,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -37,11 +37,11 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Forms</h6>
-                    <a class="collapse-item" href="LotteryForm-template.php">Lottery Form</a>
+                    <a class="collapse-item" href="LotteryForm_template.php">Lottery Form</a>
                     <!-- <a class="collapse-item" href="LotteryTable-template.html">Result Form</a> -->
                     <a class="collapse-item" href="">Result Form</a>
                     <h6 class="collapse-header">Tables</h6>
-                    <a class="collapse-item" href="test.php">Lottery Table</a>
+                    <a class="collapse-item" href="LotteryTable_template.php">Lottery Table</a>
                     <a class="collapse-item" href="cards.html">Results Table</a>
                     <a class="collapse-item" href="cards.html">Lottery Winners Table</a>
                 </div>
@@ -58,11 +58,25 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <!-- <h6 class="collapse-header">Custom Utilities:</h6> -->
+                    <h6 class="collapse-header">Charts</h6>
                     <a class="collapse-item" href="utilities-color.html">Earnings</a>
                     <a class="collapse-item" href="utilities-border.html">Revenues</a>
                     <a class="collapse-item" href="utilities-animation.html">Sales</a>
                     <a class="collapse-item" href="utilities-other.html">Other</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2"
+                aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Setting</span>
+            </a>
+            <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Settings</h6>
+                    <a class="collapse-item" href="Login_template.php">Logout</a>
                 </div>
             </div>
         </li>
@@ -139,12 +153,12 @@
                 <li class="nav-item dropdown no-arrow">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['username']; ?></span>
                         <img class="img-profile rounded-circle"
                             src="img/undraw_profile.svg">
                     </a>
                     <!-- Dropdown - User Information -->
-                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="#">
                             <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -163,7 +177,7 @@
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                             Logout
                         </a>
-                    </div>
+                    </div> -->
                 </li>
 
             </ul>

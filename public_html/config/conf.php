@@ -4,7 +4,7 @@
 		$servername = "localhost";							//rarely need to edit this
 		$username = "root";								//must edit this
 		$password = "";								//edit if required
-		$db = "lottries";							//edit if required
+		$db = "lottery";							//edit if required
 		$conn = mysqli_connect($servername, $username, $password, $db);
 		if ($conn->connect_error) {
 	        die("Connection failed: " . $conn->connect_error);
@@ -51,6 +51,7 @@
 	//Select ($col_list) from table;
 	//the $col_list is an array so you have to create an array of columns in your table.
 	//for eg. - dbSelect($col_list = array('id', 'name', 'age'));
+
 	function dbLottriesSelect(){
 		$conn = dbConnect();
 		$sql = 'select * from lottries;';
