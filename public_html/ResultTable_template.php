@@ -10,7 +10,7 @@
     <head>
         <?php include "static/head.php" ?>
         <?php include "static/dataTable_css.php" ?>
-        <title>Lotteries Table</title>
+        <title>Results Table</title>
     </head>
     <body id="page-top">
         <?php include "static/header.php" ?>
@@ -32,47 +32,37 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Lottery Number</th>
-                                    <th>Customer Name</th>
-                                    <th>Customer Phone No.</th>
-                                    <th>Payment Method</th>
-                                    <th>Paid</th>
+                                    <th>Winning Number</th>
+                                    <th>Batch</th>
+                                    <th>Prize</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Lottery Number</th>
-                                    <th>Customer Name</th>
-                                    <th>Customer Phone No.</th>
-                                    <th>Payment Method</th>
-                                    <th>Paid</th>
+                                    <th>Winning Number</th>
+                                    <th>Batch</th>
+                                    <th>Prize</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 <?php
-                                    $result = dbSelect(array('*'), 'lotteries');
+                                    $result = dbSelect(array('*'), 'results');
                                     if (mysqli_num_rows($result) > 0) {
                                         while($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $row['lottery_id']; ?></td>
-                                    <td><?php echo $row['lottery_no']; ?></td>
-                                    <td><?php echo $row['customer_name']; ?></td>
-                                    <td><?php echo $row['customer_ph_no']; ?></td>
+                                    <td><?php echo $row['result_id']; ?></td>
+                                    <td><?php echo $row['result_lottery_no']; ?></td>
                                     <td><?php
-                                            $presult = paymentSelect($row['payment_id']);
-                                            echo mysqli_fetch_assoc($presult)['payment_method'];
+                                            $bresult = batchSelect($row['batch_id']);
+                                            echo mysqli_fetch_assoc($bresult)['end_date'];
                                         ?>
                                     </td>
-                                    <td><?php if ($row['paid'] == 1){
-                                                echo 'Yes';
-                                            }
-                                            else{
-                                                echo 'No';
-                                            }
+                                    <td><?php
+                                            $presult = prizeSelect($row['prize_id']);
+                                            echo mysqli_fetch_assoc($presult)['prize_name'];
                                         ?>
-                                        
                                     </td>
                                 </tr>
                                 <?php

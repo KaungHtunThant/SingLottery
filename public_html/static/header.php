@@ -39,10 +39,10 @@
                     <h6 class="collapse-header">Forms</h6>
                     <a class="collapse-item" href="LotteryForm_template.php">Lottery Form</a>
                     <!-- <a class="collapse-item" href="LotteryTable-template.html">Result Form</a> -->
-                    <a class="collapse-item" href="">Result Form</a>
+                    <a class="collapse-item" href="ResultForm_template.php">Result Form</a>
                     <h6 class="collapse-header">Tables</h6>
                     <a class="collapse-item" href="LotteryTable_template.php">Lottery Table</a>
-                    <a class="collapse-item" href="cards.html">Results Table</a>
+                    <a class="collapse-item" href="ResultTable_template.php">Results Table</a>
                     <a class="collapse-item" href="cards.html">Lottery Winners Table</a>
                 </div>
             </div>

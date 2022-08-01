@@ -36,6 +36,39 @@
 		return $result;
 	}
 
+	function paymentSelect($var1){
+		$conn = dbConnect();
+		$sql = 'SELECT payment_method FROM payments WHERE payment_id='.$var1.';';
+		if (!$conn -> query($sql)) {
+			echo '<script type="text/javascript">console.log('.$sql.');</script>';
+		}
+		$result = mysqli_query($conn, $sql);
+		mysqli_close($conn);
+		return $result;
+	}
+
+	function batchSelect($var1){
+		$conn = dbConnect();
+		$sql = 'SELECT end_date FROM batches WHERE batch_id='.$var1.';';
+		if (!$conn -> query($sql)) {
+			echo '<script type="text/javascript">console.log('.$sql.');</script>';
+		}
+		$result = mysqli_query($conn, $sql);
+		mysqli_close($conn);
+		return $result;
+	}
+
+	function prizeSelect($var1){
+		$conn = dbConnect();
+		$sql = 'SELECT prize_name FROM prizes WHERE prize_id='.$var1.';';
+		if (!$conn -> query($sql)) {
+			echo '<script type="text/javascript">console.log('.$sql.');</script>';
+		}
+		$result = mysqli_query($conn, $sql);
+		mysqli_close($conn);
+		return $result;
+	}
+
 	//Page button functions
 	//Login
 	if(isset($_POST['login'])) {
@@ -78,19 +111,11 @@
 		$payment_id = htmlspecialchars($_POST['payment_id']);
 		$paid = htmlspecialchars($_POST['paid']);
 		$conn = dbConnect();
-		$sql = 'insert into lotteries(lottery_no, batch_id, user_id, customer_name, customer_ph_no, payment_id, paid) values('.$lottery_no.', '.$batch_id.', '.$user_id.', '.$customer_name.', '.$customer_ph_no.', '.$payment_id.', '.$paid.')';
-		// echo '<script type="text/javascript">console.log('.$sql.');</script>';
+		$sql = 'insert into lotteries(lottery_no, batch_id, user_id, customer_name, customer_ph_no, payment_id, paid) values('.$lottery_no.', '.$batch_id.', '.$_SESSION["user_id"].', "'.$customer_name.'", '.$customer_ph_no.', '.$payment_id.', '.$paid.')';
 		if (!$conn -> query($sql)) {
   			echo '<script type="text/javascript">console.log('.$sql.');</script>';
 		}
-		else{
-			$result = mysqli_query($conn, $sql);
-		}
-		// if (mysqli_query($conn, $sql)) {
-		// 	_goto('LotteryForm_template.php');
-		// } else {
-		// 	echo '<script type="text/javascript">console.log('.$sql.');</script>';
-		// }
+		_goto('LotteryForm_template.php');
 		mysqli_close($conn);
 	}
 
@@ -100,3 +125,5 @@
 		exit;
 	}
 ?>
+
+<!-- insert into lotteries(lottery_no, batch_id, user_id, customer_name, customer_ph_no, payment_id, paid) values(, 2, 1, "", , 1, 1) -->
