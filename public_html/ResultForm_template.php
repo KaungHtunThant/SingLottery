@@ -24,74 +24,49 @@
                         <div class="row">
                             <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                             <!-- <input type="hidden" namm=""> -->
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customer_name">First, Second & Third Prizes</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta1"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customer_name">10 Jackpot Prizes @ $10,000 each</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta2"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customer_name">10 Lucky Prizes @ $5,000 each</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customer_name">30 Gift Prizes @ $3,000 each</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta4"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customer_name">30 Consolation Prizes @ $2,000 each</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta5"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customer_name">50 Participation Prizes @ $1,000 each</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta6"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="customer_name">315,000 2D Delight Prizes @ $6 each</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta6"></textarea>
+                                </div>
+                            </div>
                             <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="lottery_no">Lottery No.</label>
-                                    <input type="text" class="form-control" name="lottery_no" id="lottery_no" aria-describedby="lottery_no_Help" placeholder="Enter lottery no.">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="batch_id">Batch</label>
-                                    <select class="form-control" id="batch_id" name="batch_id">
-                                        <option selected>--- Choose a batch ---</option>
-                                        <?php
-                                            $result = dbSelect(array('*'), 'batches');
-                                            if (mysqli_num_rows($result) > 0) {
-                                                while($row = mysqli_fetch_assoc($result)) {
-                                        ?>
-                                            <option value="<?php echo $row['batch_id']; ?>">
-                                                <?php echo $row['end_date']; ?>
-                                            </option>
-                                        <?php
-                                                }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customer_name">Customer Name</label>
-                                    <input type="text" class="form-control" name="customer_name" id="customer_name" aria-describedby="customer_name_Help" placeholder="Enter customer name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="customer_ph_no">Customer Phone No.</label>
-                                    <input type="text" class="form-control" name="customer_ph_no" id="customer_ph_no" aria-describedby="customer_ph_no_Help" placeholder="Enter customer phone no.">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="payment_id">Payment Type</label>
-                                    <select class="form-control" id="payment_id" name="payment_id">
-                                        <option selected>--- Choose a payment option ---</option>
-                                        <?php
-                                            $result = dbSelect(array('*'), 'payments');
-                                            if (mysqli_num_rows($result) > 0) {
-                                                while($row = mysqli_fetch_assoc($result)) {
-                                        ?>
-                                            <option value="<?php echo $row['payment_id']; ?>">
-                                                <?php echo $row['payment_method']; ?>
-                                            </option>
-                                        <?php
-                                                }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="paid">Paid :</label>
-                                    <input type="radio" class="btn-check" name="paid" id="option1" autocomplete="off" value="1" checked>
-                                    <label class="btn btn-sm btn-outline-primary" for="option1">Yes</label> | 
-                                    <input type="radio" class="btn-check" name="paid" id="option2" autocomplete="off" value="0">
-                                    <label class="btn btn-sm btn-outline-danger" for="option2">No</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
                                 <div class="form-group">
                                     <input class="btn btn-primary" type="submit" name="lottery_insert" value="Submit">
                                 </div>
