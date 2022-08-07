@@ -76,7 +76,6 @@
             </div>
 
         </div>
-        <!-- /.container-fluid -->
 
         <?php include "static/footer.php" ?>
 

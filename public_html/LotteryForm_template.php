@@ -86,14 +86,17 @@
                                 <div class="form-group">
                                     <label for="paid">Paid :</label>
                                     <input type="radio" class="btn-check" name="paid" id="option1" autocomplete="off" value="1" checked>
-                                    <label class="btn btn-sm btn-outline-primary" for="option1">Yes</label> | 
+                                    <label class="btn btn-sm btn-outline-success" for="option1">Yes</label> | 
                                     <input type="radio" class="btn-check" name="paid" id="option2" autocomplete="off" value="0">
                                     <label class="btn btn-sm btn-outline-danger" for="option2">No</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input class="btn btn-primary" type="submit" name="lottery_insert" value="Submit">
+                                    <hr class="d-md-none divider">
+                                    <div class="d-flex justify-content-center">
+                                        <input class="btn btn-primary" type="submit" name="lottery_insert" value="Submit">
+                                    </div>
                                 </div>
                             </div>
                         </div>
