@@ -62,8 +62,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="customer_name">315,000 2D Delight Prizes @ $6 each</label>
-                                    <textarea class="form-control" id="" rows="3" name="ta6"></textarea>
+                                    <label for="customer_name">315,000 2D  Delight Prizes @ $6 each</label>
+                                    <textarea class="form-control" id="" rows="3" name="ta7"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12">
