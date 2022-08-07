@@ -15,10 +15,13 @@
         <?php include "static/header.php" ?>
 
         <div class="container">
-            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Lottery Form</h1>
-            </div>
+            </div> -->
             <div class="card shadow h-100 py-2">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Lottery Form</h6>
+                </div>
                 <div class="card-body">
                     <form method="post" action="config/conf_new.php">
                         <div class="row">

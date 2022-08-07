@@ -22,7 +22,7 @@ Pages
 	- Lotteries table
 	- Results adding Form
 	- Results Table
-	- Winners Table
+	- Winners Table	(Batch_id, Lottery No., Customer Name, Customer No., Prize)
 	- Statistics
 
 User (Future Update)

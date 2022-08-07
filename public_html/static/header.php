@@ -43,7 +43,7 @@
                     <h6 class="collapse-header">Tables</h6>
                     <a class="collapse-item" href="LotteryTable_template.php">Lottery Table</a>
                     <a class="collapse-item" href="ResultTable_template.php">Results Table</a>
-                    <a class="collapse-item" href="cards.html">Lottery Winners Table</a>
+                    <a class="collapse-item" href="WinnersTable_template.php">Lottery Winners Table</a>
                 </div>
             </div>
         </li>
