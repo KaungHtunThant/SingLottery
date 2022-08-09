@@ -23,34 +23,41 @@
                     <h6 class="m-0 font-weight-bold text-primary">Lottery Form</h6>
                 </div>
                 <div class="card-body">
-                    <form method="post" action="config/conf_new.php">
+                    <form method="post">
                         <div class="row">
                             <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                             <!-- <input type="hidden" namm=""> -->
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="lottery_no">Lottery No.</label>
-                                    <input type="text" class="form-control" name="lottery_no" id="lottery_no" aria-describedby="lottery_no_Help" placeholder="Enter lottery no.">
+                                    <input type="text" class="form-control" name="lottery_no" id="lottery_no" aria-describedby="lottery_no_Help" placeholder="Enter lottery no." required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="batch_id">Batch</label>
-                                    <select class="form-control" id="batch_id" name="batch_id">
-                                        <option selected>--- Choose a batch ---</option>
-                                        <?php
-                                            $result = dbSelect(array('*'), 'batches');
-                                            if (mysqli_num_rows($result) > 0) {
-                                                while($row = mysqli_fetch_assoc($result)) {
-                                        ?>
-                                            <option value="<?php echo $row['batch_id']; ?>">
-                                                <?php echo $row['batch_id']; ?>
-                                            </option>
-                                        <?php
-                                                }
-                                            }
-                                        ?>
-                                    </select>
+                                    <div class="row">
+                                        <label for="batch_id">Batch</label>
+                                        <div class="col-8">
+                                            <select class="form-control" id="batch_id" name="batch_id" required>
+                                                <option value="" selected>None</option>
+                                                <?php
+                                                    $result = dbSelect(array('*'), 'batches');
+                                                    if (mysqli_num_rows($result) > 0) {
+                                                        while($row = mysqli_fetch_assoc($result)) {
+                                                ?>
+                                                    <option value="<?php echo $row['batch_id']; ?>">
+                                                        <?php echo $row['batch_id']; ?>
+                                                    </option>
+                                                <?php
+                                                        }
+                                                    }
+                                                ?>
+                                            </select>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">New<span class="d-none d-lg-inline"> Batch</span></button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -98,10 +105,40 @@
                                 <div class="form-group">
                                     <hr class="d-md-none divider">
                                     <div class="d-flex justify-content-center">
-                                        <input class="btn btn-primary" type="submit" name="lottery_insert" value="Submit">
+                                        <input class="btn btn-primary" type="submit" name="lottery_insert" value="Submit"> 
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Batch 
+                            <?php
+                                echo lastBatchSelect();
+                            ?>
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <form method="post">
+                        <div class="modal-body">
+                            <input type="hidden" name="batch_id" value="lastBatchSelect();">
+                            <label for="start_date">Start Date</label>
+                            <input type="text" class="form-control" name="start_date" id="start_date" aria-describedby="start_date_Help" placeholder="Enter Start Date">
+                            <label for="end_date">End Date</label>
+                            <input type="text" class="form-control" name="end_date" id="end_date" aria-describedby="end_date_Help" placeholder="Enter End Date">
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-success" name="batch_insert">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                         </div>
                     </form>
                 </div>

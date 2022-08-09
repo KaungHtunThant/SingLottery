@@ -30,6 +30,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Winning Number</th>
+                                    <th>Customer Name</th>
+                                    <th>Customer Phone No.</th>
                                     <th>Batch</th>
                                     <th>Prize</th>
                                 </tr>
@@ -38,19 +40,24 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Winning Number</th>
+                                    <th>Customer Name</th>
+                                    <th>Customer Phone No.</th>
                                     <th>Batch</th>
                                     <th>Prize</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 <?php
+                                    $var = 1;
                                     $result = winnersSelect();
                                     if (mysqli_num_rows($result) > 0) {
                                         while($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                 <tr>
-                                    <td><?php echo $row['result_id']; ?></td>
+                                    <td><?php echo $var++ ?></td>
                                     <td><?php echo $row['result_lottery_no']; ?></td>
+                                    <td><?php echo $row['customer_name']; ?></td>
+                                    <td><?php echo $row['customer_ph_no']; ?></td>
                                     <td><?php
                                             echo 'Draw No.: '.$row['batch_id'];
                                         ?>

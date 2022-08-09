@@ -29,6 +29,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Batch</th>
                                     <th>Lottery Number</th>
                                     <th>Customer Name</th>
                                     <th>Customer Phone No.</th>
@@ -39,6 +40,7 @@
                             <tfoot>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Batch</th>
                                     <th>Lottery Number</th>
                                     <th>Customer Name</th>
                                     <th>Customer Phone No.</th>
@@ -54,12 +56,15 @@
                                 ?>
                                 <tr>
                                     <td><?php echo $row['lottery_id']; ?></td>
+                                    <td><?php echo $row['batch_id']; ?></td>
                                     <td><?php echo $row['lottery_no']; ?></td>
                                     <td><?php echo $row['customer_name']; ?></td>
                                     <td><?php echo $row['customer_ph_no']; ?></td>
                                     <td><?php
-                                            $presult = paymentSelect($row['payment_id']);
-                                            echo mysqli_fetch_assoc($presult)['payment_method'];
+                                            if($row['payment_id']!=''){
+                                                $presult = paymentSelect($row['payment_id']);
+                                                echo mysqli_fetch_assoc($presult)['payment_method'];
+                                            }
                                         ?>
                                     </td>
                                     <td><?php if ($row['paid'] == 1){

@@ -1,4 +1,4 @@
-<!-- Page Wrapper -->
+ <!-- Page Wrapper -->
 <div id="wrapper">
 
     <!-- Sidebar -->
@@ -38,7 +38,6 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Forms</h6>
                     <a class="collapse-item" href="LotteryForm_template.php">Lottery Form</a>
-                    <!-- <a class="collapse-item" href="LotteryTable-template.html">Result Form</a> -->
                     <a class="collapse-item" href="ResultForm_template.php">Result Form</a>
                     <h6 class="collapse-header">Tables</h6>
                     <a class="collapse-item" href="LotteryTable_template.php">Lottery Table</a>
@@ -183,4 +182,4 @@
             </ul>
 
         </nav>
-        <!-- End of Topbar-->
+        <!-- End of Topbar -->
