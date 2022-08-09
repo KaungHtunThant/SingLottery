@@ -44,7 +44,7 @@
                                                 while($row = mysqli_fetch_assoc($result)) {
                                         ?>
                                             <option value="<?php echo $row['batch_id']; ?>">
-                                                <?php echo $row['end_date']; ?>
+                                                <?php echo $row['batch_id']; ?>
                                             </option>
                                         <?php
                                                 }

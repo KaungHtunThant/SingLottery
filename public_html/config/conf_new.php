@@ -69,6 +69,18 @@
 		return $result;
 	}
 
+	function winnersSelect(){
+		$conn = dbConnect();
+		$sql = '
+		SELECT * FROM lotteries
+		INNER JOIN results
+		ON lotteries.lottery_no = results.result_lottery_no;
+		';
+		$result = mysqli_query($conn, $sql);
+		mysqli_close($conn);
+		return $result;
+	}
+
 	//Page button functions
 	//Login
 	if(isset($_POST['login'])) {
