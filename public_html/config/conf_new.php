@@ -99,13 +99,12 @@
 		// echo '<script type="text/javascript">console.log('.$bid.');</script>';
 		$bidarray = array();
 		$conn = dbConnect();
-		$sql = 'SELECT lottery_id FROM lotteries WHERE batch_id=1044 AND NOT customer_name="Available";';
+		$sql = 'SELECT lottery_id FROM lotteries WHERE batch_id = 1045 AND NOT customer_name="Available";';
 		// echo $sql;
 		// if (!$conn -> query($sql)) {
 		// 	echo '<script type="text/javascript">console.log('.$sql.');</script>';
-		// }
+		// }	
 		$result = mysqli_query($conn, $sql);
-
 		if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
             	// echo '<script type="text/javascript">console.log('.$row['lottery_id'].');</script>';
@@ -114,8 +113,6 @@
             mysqli_close($conn);
             return count($bidarray);
         }
-		
-		return $result;
 	}
 
 	function paidSelect(){
@@ -123,7 +120,7 @@
 		// echo '<script type="text/javascript">console.log('.$bid.');</script>';
 		$bidarray = array();
 		$conn = dbConnect();
-		$sql = 'SELECT lottery_id FROM lotteries WHERE batch_id=1044 AND paid=1 AND NOT customer_name="Available";';
+		$sql = 'SELECT lottery_id FROM lotteries WHERE batch_id=1045 AND paid=1 AND NOT customer_name="Available";';
 		// echo $sql;
 		// if (!$conn -> query($sql)) {
 		// 	echo '<script type="text/javascript">console.log('.$sql.');</script>';

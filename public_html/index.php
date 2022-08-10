@@ -138,7 +138,7 @@
                     <div class="card shadow mb-4">
                         <div
                             class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Lottery Tickets</h6>
                             <div class="dropdown no-arrow">
                                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -176,7 +176,7 @@
                 <div class="col-xl-8 col-lg-7">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Results List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Results List</h>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
